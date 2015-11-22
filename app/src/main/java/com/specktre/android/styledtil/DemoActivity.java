@@ -2,6 +2,7 @@ package com.specktre.android.styledtil;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -11,8 +12,15 @@ import android.widget.AutoCompleteTextView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class DemoActivity extends AppCompatActivity {
+
+    @Bind(R.id.tilEditText)
+    TextInputLayout editTextTil;
+
+    @Bind(R.id.tilAutoCompleteTextView)
+    TextInputLayout autoCompleteTextTil;
 
     @Bind(R.id.actvAutoCompleteTextView)
     AutoCompleteTextView autoCompleteTextView;
@@ -54,5 +62,13 @@ public class DemoActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @OnClick(R.id.showErrorsButton)
+    public void onShowErrorsButtonClick() {
+        editTextTil.setErrorEnabled(true);
+        autoCompleteTextTil.setErrorEnabled(true);
+        editTextTil.setError("Showcase of error on EditText");
+        autoCompleteTextTil.setError("Showcase of error on AutoCompleteTextView ");
     }
 }
