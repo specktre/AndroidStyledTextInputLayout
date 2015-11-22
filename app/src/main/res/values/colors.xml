@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue">#0099e5</color>
+    <color name="blueDark">#003366</color>
+    <color name="blueLight">#c0e6fd</color>
+    <color name="blueLight2">#e6f3fb</color>
+    <color name="orange">#ff6600</color>
+    <color name="green">#77aa00</color>
+    <color name="darkGrey">#292929</color>
+    <color name="grey">#666666</color>
+    <color name="grey2">#a3a3a3</color>
+    <color name="greyLight">#e0e0e0</color>
+    <color name="greyLight2">#f0f0f0</color>
+    <color name="labelColor">#999999</color>
+    <color name="red">#e30613</color>
+</resources>

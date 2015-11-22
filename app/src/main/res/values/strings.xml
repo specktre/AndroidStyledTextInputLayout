@@ -1,0 +1,6 @@
+<resources>
+    <string name="title_activity_demo">Demo Activity</string>
+    <string name="regular_edit_text">Regular EditText</string>
+    <string name="auto_complete_text_view_text">AutoCompleteTextView</string>
+    <string name="action_settings">Settings</string>
+</resources>
