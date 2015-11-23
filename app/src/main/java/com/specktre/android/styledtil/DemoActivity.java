@@ -33,13 +33,26 @@ public class DemoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_demo);
         ButterKnife.bind(this);
 
-        Drawable wrappedDrawable = DrawableCompat.wrap(autoCompleteTextView.getBackground());
-        DrawableCompat.setTint(wrappedDrawable, getResources().getColor(R.color.blue));
-        autoCompleteTextView.setBackgroundDrawable(wrappedDrawable);
+        setStyleForTextForAutoComplete(getResources().getColor(R.color.greyLight));
+        autoCompleteTextView.setOnFocusChangeListener((v, hasFocus) -> {
+            if(hasFocus) {
+                setStyleForTextForAutoComplete(getResources().getColor(R.color.blue));
+            } else {
+                if(autoCompleteTextView.getText().length() == 0) {
+                    setStyleForTextForAutoComplete(getResources().getColor(R.color.greyLight));
+                }
+            }
+        });
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, items);
         autoCompleteTextView.setAdapter(adapter);
         autoCompleteTextView.setThreshold(1);
+    }
+
+    private void setStyleForTextForAutoComplete(int color) {
+        Drawable wrappedDrawable = DrawableCompat.wrap(autoCompleteTextView.getBackground());
+        DrawableCompat.setTint(wrappedDrawable, color);
+        autoCompleteTextView.setBackgroundDrawable(wrappedDrawable);
     }
 
     @Override
